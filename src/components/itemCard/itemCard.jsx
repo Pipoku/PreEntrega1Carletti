@@ -6,19 +6,21 @@ import { CardActionArea } from "@mui/material";
 import "./itemCard.css"
 
 const ItemCard = ( props ) => {
-
-  const { name, description, img } = props;
+  const { images, name, info } = props.props;
 
   return (
-    <Card sx={{ maxWidth: 345 }} variant="raised">
+    <Card sx={{ maxWidth: 300 }} variant="raised" className="card">
       <CardActionArea>
-        <CardMedia component="img" image={img} alt="logo-user" className="card_img"/>
+        <CardMedia component="img" image={images[0]} alt="logo-user" className="card_img"/>
         <CardContent>
           <Typography gutterBottom variant="h4" component="div">
             {name}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {description}
+            {info.Afiliação} | {info["Registro Ninja"]}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            {info.Ocupação}
           </Typography>
         </CardContent>
       </CardActionArea>

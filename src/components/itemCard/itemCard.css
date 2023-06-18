@@ -4,3 +4,6 @@
     min-height: 150px;
     object-fit: contain;
 }
+.card {
+    max-width: 300px;
+}

@@ -1,44 +1,43 @@
 import { Component } from "react";
 import "./App.css";
-
-//Images
-import setup1 from "./imgs/setup1.jpg";
-import setup2 from "./imgs/setup2.jpg";
-import setup3 from "./imgs/setup3.jpg";
+// React router dom
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 
 // Components
-import ItemCard from "./components/itemCard/itemCard";
 import NavBar from "./components/NavBar/NavBar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
+
+// Pages
+import HomePage from "./pages/HomePage/HomePage";
+import ContactUsPage from "./pages/ContactUsPage/ContactUsPage";
+import AboutUsPage from "./pages/AboutUsPage/AboutUsPage"
+import DetailCharacterPage from "./pages/DetailCharacterPage/DetailCharacterPage"
+import Category from "./pages/CategoryPage/CategoryPage";
+
+fetch("https://naruto-api.fly.dev/api/v1/characters")
+.then((response) => response.json())
+.then((json) => console.log(json.results));
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <NavBar />
+      <Router>
         <div>
-          <ItemListContainer greeting="En donde podras encontrar los mejores setups!" />
-        </div>
-        <div className="itemSection">
+          <NavBar />
+          <div>
+            <ItemListContainer greeting="A mundo naruto!" />
+          </div>
           
-          <ItemCard
-            name="Office space"
-            description="The best enviroment for your working space"
-            img={setup1}
-          />
-          <ItemCard
-            name="Gaming girl"
-            description="Your cutes setup for the new empowered"
-            img={setup2}
-          />
-          <ItemCard
-            name="Gaming wave"
-            description="Make your setup the best looking to stream on!"
-            img={setup3}
-          />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutUsPage />} />
+            <Route path="/contact" element={<ContactUsPage />} />
+            <Route path="/detail/:id" element={<DetailCharacterPage />} />
+            <Route path="/category/:Afiliação" element={<Category />} />
+          </Routes>
         </div>
-      </div>
+      </Router>
     );
   }
 }

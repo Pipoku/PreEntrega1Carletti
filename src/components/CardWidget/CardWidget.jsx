@@ -1,4 +1,3 @@
-import React from "react";
 import LocalGroceryStoreIcon from "@mui/icons-material/LocalGroceryStore";
 
 const CardWidget = () => {

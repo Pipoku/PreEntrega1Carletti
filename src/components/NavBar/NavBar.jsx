@@ -14,8 +14,15 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
+import MenuList from '@mui/material/MenuList';
+import { Link } from "react-router-dom";
 
-const pages = ['Setups', 'Blog', 'Contact Us'];
+const pages = [
+  { label: 'Home', link: '/' },
+  { label: 'Sunagakure', link: '/category/Sunagakure' },
+  { label: 'Konohagakure', link: '/category/Konohagakure' },
+  { label: 'Kirigakure', link: '/category/Kirigakure' },
+];
 const settings = ['Profile', 'Account', 'Logout'];
 
 function ResponsiveAppBar() {
@@ -38,7 +45,7 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static" style={{background: "#93AAE8"}}>
+    <AppBar position="static" style={{ background: "#93AAE8" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -57,7 +64,7 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            SetupWorld
+            Naruto World
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -90,8 +97,10 @@ function ResponsiveAppBar() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                <MenuItem key={page.label} onClick={handleCloseNavMenu}>
+                  <Link to={page.link}>
+                    <Typography textAlign="center">{page.label}</Typography>
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>
@@ -117,12 +126,14 @@ function ResponsiveAppBar() {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page}
+              <Button key={page.label}>
+                <Link
+                  to={page.link}
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: 'white', display: 'block' }}
+                >
+                  {page.label}
+                </Link>
               </Button>
             ))}
           </Box>
@@ -130,7 +141,7 @@ function ResponsiveAppBar() {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <Avatar alt="Remy Sharp" src="" />
               </IconButton>
             </Tooltip>
             <Menu
@@ -155,14 +166,14 @@ function ResponsiveAppBar() {
                 </MenuItem>
               ))}
             </Menu>
-          </Box>        
+          </Box>
           <div>
             <CardWidget />
           </div>
         </Toolbar>
       </Container>
     </AppBar>
-    
   );
 }
+
 export default ResponsiveAppBar;
