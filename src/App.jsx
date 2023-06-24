@@ -34,7 +34,7 @@ class App extends Component {
             <Route path="/about" element={<AboutUsPage />} />
             <Route path="/contact" element={<ContactUsPage />} />
             <Route path="/detail/:id" element={<DetailCharacterPage />} />
-            <Route path="/category/:Afiliação" element={<Category />} />
+            <Route path="/category/:categoryId" element={<Category />} />
           </Routes>
         </div>
       </Router>

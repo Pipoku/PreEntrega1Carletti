@@ -14,7 +14,6 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
-import MenuList from '@mui/material/MenuList';
 import { Link } from "react-router-dom";
 
 const pages = [
@@ -22,6 +21,10 @@ const pages = [
   { label: 'Sunagakure', link: '/category/Sunagakure' },
   { label: 'Konohagakure', link: '/category/Konohagakure' },
   { label: 'Kirigakure', link: '/category/Kirigakure' },
+  { label: 'Iwagakure', link: '/category/Iwagakure' },
+  { label: 'Otogakure', link: '/category/Otogakure' },
+  { label: 'Takigakure', link: '/category/Takigakure' },
+  { label: 'Monte Myōboku', link: '/category/Monte Myōboku' },
 ];
 const settings = ['Profile', 'Account', 'Logout'];
 

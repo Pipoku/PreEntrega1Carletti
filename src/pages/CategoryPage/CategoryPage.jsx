@@ -2,22 +2,28 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import ItemCard from "../../components/itemCard/itemCard";
+import "./CategoryPage.css"
 
 const Category = () => {
-  const [chars, setChars] = useState([]);
+  const [characters, setChars] = useState([]);
 
   let { categoryId } = useParams();
   
-  let filteredCharacters = chars.filter((char) => {
-    return char.species === categoryId;
+  console.log(characters)
+  let filteredCharacters = characters.filter((char) => {
+    console.log(char)
+    return char.info.Afiliação === categoryId;
   });
 
   console.log("filteredCharacters", filteredCharacters);
 
   useEffect(() => {
-    axios(`https://naruto-api.fly.dev/api/v1/characters`).then((json) =>
-      setChars(json.data.results)
-    );
+    if(characters.length === 0){
+      axios('https://naruto-api.fly.dev/api/v1/characters').then((json) =>
+      setChars(json.data) 
+      );
+    }
+
   }, []);
 
   return (
