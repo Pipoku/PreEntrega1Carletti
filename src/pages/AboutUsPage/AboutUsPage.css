@@ -1,0 +1,23 @@
+.about-us {
+    background-color: #f9f9f9;
+    padding: 60px 0;
+  }
+  
+  .about-us-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .section-title {
+    font-size: 32px;
+    color: #333;
+  }
+  
+  .description {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #666;
+    line-height: 1.6;
+  }
+  

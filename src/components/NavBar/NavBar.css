@@ -1,0 +1,12 @@
+button.MuiButtonBase-root.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.MuiButton-textSizeMedium.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.MuiButton-textSizeMedium.css-1q39md6-MuiButtonBase-root-MuiButton-root:after {
+    content: " ";
+    width: 10px;
+    display: block;
+    height: 10px;
+    border-top: 3px solid grey;
+    border-right: 3px solid grey;
+    transform: rotate(45deg) translate(-50%,-50%);
+    position: absolute;
+    top: 7px;
+    right: 0;
+}
