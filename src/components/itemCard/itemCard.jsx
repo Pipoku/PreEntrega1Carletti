@@ -67,16 +67,17 @@ const ItemCard = ( props ) => {
           + Add to cart
         </Button>
       ) : (
-        <Button className="item-plus-button" onClick={() => addToCart()}>
+        <Button className="item-plus-button" style={{marginRight:50}} onClick={() => addToCart()}>
           + add more
         </Button>
       )}
 
       {quantityPerItem > 0 && (
-        <Button className="item-minus-button" onClick={() => removeItem(id)}>
+        <Button className="item-minus-button"  onClick={() => removeItem(id)}>
           subtract item
         </Button>
-      )}{quantityPerItem > 0 && (
+      )}
+      {quantityPerItem > 0 && (
         <Typography variant="body2" color="text.secondary" textAlign={"center"}>
           Quantity of this: {quantityPerItem}
         </Typography>
